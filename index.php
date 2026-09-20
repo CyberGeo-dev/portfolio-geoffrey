@@ -1,0 +1,110 @@
+<?php $pageTitle = "Portfolio"; include 'partials/head.php'; ?>
+<?php $currentPage = ''; include 'partials/nav.php'; ?>
+
+    <!-- HERO -->
+    <section class="hero-scan" style="background:#05060a; color:#F4F1EA;">
+        <div style="max-width:1120px; margin:0 auto; padding:80px 24px 88px; display:flex; flex-direction:column; align-items:center; gap:26px; position:relative; z-index:1; text-align:center;">
+            <svg viewBox="0 0 900 300" style="width:min(460px, 88vw); height:auto; display:block; margin-bottom:8px;" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="tealViolet" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#00f5d4"/>
+                        <stop offset="100%" stop-color="#7b2ff7"/>
+                    </linearGradient>
+                    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
+                        <feGaussianBlur stdDeviation="8" result="blur"/>
+                        <feMerge>
+                            <feMergeNode in="blur"/>
+                            <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                    </filter>
+                    <linearGradient id="scanGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#00f5d4" stop-opacity="0"/>
+                        <stop offset="50%" stop-color="#00f5d4" stop-opacity="0.55"/>
+                        <stop offset="100%" stop-color="#7b2ff7" stop-opacity="0"/>
+                    </linearGradient>
+                    <clipPath id="badgeClip">
+                        <rect x="-100" y="-100" width="200" height="200" rx="40"/>
+                    </clipPath>
+                </defs>
+                <g transform="translate(150,150)">
+                    <rect x="-100" y="-100" width="200" height="200" rx="40" fill="none"
+                          stroke="url(#tealViolet)" stroke-width="4"
+                          stroke-dasharray="760" stroke-dashoffset="760">
+                        <animate attributeName="stroke-dashoffset" values="760;0" dur="0.9s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1"/>
+                    </rect>
+                    <path d="M53.6,45 A70,70 0 1 1 68.9,-12.2" fill="none"
+                          stroke="url(#tealViolet)" stroke-width="15" stroke-linecap="round"
+                          stroke-dasharray="400" stroke-dashoffset="400" filter="url(#glow)">
+                        <animate attributeName="stroke-dashoffset" values="400;0" dur="0.9s" begin="0.7s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1"/>
+                    </path>
+                    <path d="M53.6,45 L5,45 L5,15" fill="none"
+                          stroke="url(#tealViolet)" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"
+                          stroke-dasharray="90" stroke-dashoffset="90" filter="url(#glow)">
+                        <animate attributeName="stroke-dashoffset" values="90;0" dur="0.4s" begin="1.6s" fill="freeze"/>
+                    </path>
+                    <g transform="translate(32,-32) scale(0)">
+                        <animateTransform attributeName="transform" type="scale" additive="sum"
+                                          values="0;1.15;1" keyTimes="0;0.7;1" dur="0.45s" begin="1.8s" fill="freeze"/>
+                        <path d="M-7,0 A7,9 0 0 1 7,0" fill="none" stroke="url(#tealViolet)" stroke-width="3.5"/>
+                        <rect x="-11" y="0" width="22" height="17" rx="3.5" fill="#05060a" stroke="url(#tealViolet)" stroke-width="3.5"/>
+                        <circle cx="0" cy="8.5" r="2.2" fill="url(#tealViolet)"/>
+                    </g>
+                    <path d="M53.6,45 A70,70 0 1 1 68.9,-12.2" fill="none"
+                          stroke="#00f5d4" stroke-width="15" stroke-linecap="round" stroke-opacity="0">
+                        <animate attributeName="stroke-opacity" values="0;0.35;0" dur="3.2s" begin="2.4s" repeatCount="indefinite"/>
+                    </path>
+                    <g clip-path="url(#badgeClip)">
+                        <rect x="-40" y="-120" width="60" height="240" fill="url(#scanGrad)" opacity="0" transform="rotate(20)">
+                            <animateTransform attributeName="transform" type="translate" additive="sum"
+                                              values="-140,0;140,0" dur="0.9s" begin="2.0s" fill="freeze"/>
+                            <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.8;1" dur="0.9s" begin="2.0s" fill="freeze"/>
+                        </rect>
+                    </g>
+                </g>
+                <text x="270" y="163" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" letter-spacing="0.5" opacity="0">
+                    <animate attributeName="opacity" values="0;1" dur="0.8s" begin="1.9s" fill="freeze"/>
+                    <tspan font-weight="700" font-size="72" fill="#eef2f7">CyberGeo</tspan><tspan font-weight="300" font-size="72" fill="url(#tealViolet)">-dev</tspan>
+                </text>
+                <clipPath id="typeClip">
+                    <rect x="266" y="188" width="0" height="26">
+                        <animate attributeName="width" values="0;345" dur="1.1s" begin="2.3s" fill="freeze"/>
+                    </rect>
+                </clipPath>
+                <g clip-path="url(#typeClip)">
+                    <text x="270" y="205" font-family="Consolas, 'Courier New', monospace" font-size="18"
+                          fill="#8fa3c7" letter-spacing="1.5">développeur // cybersécurité</text>
+                </g>
+                <rect x="270" y="189" width="9" height="20" fill="#00f5d4" opacity="0">
+                    <animate attributeName="opacity" values="0;1" dur="0.05s" begin="2.3s" fill="freeze"/>
+                    <animate attributeName="x" values="270;600" dur="1.1s" begin="2.3s" fill="freeze"/>
+                    <animate attributeName="opacity" values="1;0;1" dur="0.9s" begin="3.4s" repeatCount="indefinite"/>
+                </rect>
+            </svg>
+            <span class="tag">Disponible pour un stage</span>
+            <h1 class="hero-title" style="font-size:56px; line-height:1.05; max-width:760px;">Étudiant développeur.</h1>
+            <p style="font-size:19px; line-height:1.6; color:#C9C6BC; max-width:620px; margin:0;">
+                Troisième année en Informatique de gestion (orientation développement) à l'ATCA de Charleroi, en cours du soir.
+                Je construis des applications web en Java et en PHP, et je cherche un stage pour mettre ça en pratique sur du concret.
+            </p>
+            <div style="display:flex; gap:16px; flex-wrap:wrap; justify-content:center; margin-top:8px;">
+                <a class="btn-primary" href="contact.php" style="font-weight:700; padding:14px 26px; border-radius:10px; font-size:15px;">Me contacter</a>
+                <a class="btn-ghost" href="projets.php" style="font-weight:700; padding:14px 26px; border-radius:10px; font-size:15px;">Voir mes projets</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- LABO PERSO -->
+    <section style="background:var(--bg-alt);">
+        <div class="reveal" style="max-width:1120px; margin:0 auto; padding:64px 24px; display:flex; align-items:center; gap:40px; flex-wrap:wrap;">
+            <div style="flex:1; min-width:260px;">
+                <span class="tag">À côté des cours</span>
+                <h2 style="font-size:26px; margin-top:14px; margin-bottom:12px;">Un labo perso, par curiosité pour l'infra.</h2>
+                <p style="font-size:16px; line-height:1.6; color:var(--text-muted); margin:0;">Un serveur maison sous Proxmox qui héberge Home Assistant et plusieurs services — de quoi pratiquer virtualisation, réseau et domotique en dehors des projets scolaires.</p>
+            </div>
+            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                <span class="tag">Proxmox</span><span class="tag">Home Assistant</span><span class="tag">Réseau</span>
+            </div>
+        </div>
+    </section>
+
+<?php include 'partials/footer.php'; ?>
